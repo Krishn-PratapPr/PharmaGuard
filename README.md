@@ -149,7 +149,7 @@ The `.example.env` file is provided as a template.
 ## How it works
 
 - `setup.cpp` reads the DS18B20 sensor every second.
-- If temperature is outside the safe range (`20.0°C` to `35.0°C`), the buzzer and LED activate.
+- If temperature is outside the safe range (`2.0°C` to `8.0°C`), the buzzer and LED activate.
 - Every 20 seconds, the ESP32 uploads the temperature and breach flag to ThingSpeak.
 - `dashboard.html` fetches the latest ThingSpeak reading and updates the UI.
 - When a fresh breach is detected, the dashboard sends an email alert using EmailJS, with cooldown logic to avoid repeated emails.

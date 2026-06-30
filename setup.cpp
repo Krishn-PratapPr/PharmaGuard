@@ -13,8 +13,8 @@ const char* WIFI_PASSWORD  = "Aman1234";
 unsigned long THINGSPEAK_CHANNEL_ID = 3365330;
 const char*   THINGSPEAK_WRITE_KEY  = "D43UICTVR8VTOE7J";
 
-const float TEMP_MIN = 20.0;
-const float TEMP_MAX = 35.0;
+const float TEMP_MIN = 2.0;
+const float TEMP_MAX = 8.0;
 
 // ─── PINS ───
 #define ONE_WIRE_BUS  15   // Pin 15 is safer than Pin 4 for OneWire

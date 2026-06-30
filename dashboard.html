@@ -140,7 +140,7 @@
       </div>
       <div class="temp-time" id="temp-time">Reading time: —</div>
       <div class="range-bar"><div class="range-fill" id="range-fill" style="width:0%"></div></div>
-      <div class="range-labels"><span>10°C</span><span>Safe 20–35°C</span><span>50°C</span></div>
+      <div class="range-labels"><span>0°C</span><span>Safe 2–8°C</span><span>12°C</span></div>
     </div>
 
     <!-- Status -->
@@ -264,8 +264,8 @@
 
 <script>
   /* ══ USER CONFIG ══ */
-  const TEMP_MIN    = 20.0;
-  const TEMP_MAX    = 35.0;
+  const TEMP_MIN    = 2.0;
+  const TEMP_MAX    = 8.0;
   const STALE_SEC   = 60;
   const FETCH_EVERY = 15000;
 
@@ -512,7 +512,7 @@
         plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>`${c.parsed.y.toFixed(1)} °C`}} },
         scales:{
           x:{ ticks:{color:tk,font:{size:10},maxTicksLimit:6}, grid:{color:gc} },
-          y:{ ticks:{color:tk,font:{size:10},callback:v=>`${v}°C`}, grid:{color:gc}, suggestedMin:15, suggestedMax:42 }
+          y:{ ticks:{color:tk,font:{size:10},callback:v=>`${v}°C`}, grid:{color:gc}, suggestedMin:0, suggestedMax:12 }
         }
       }
     });
@@ -556,7 +556,7 @@
       badge.className='badge breach'; badge.textContent='Breach';
       dot.className='status-dot red pulse';
       stText.textContent='Breach detected'; stText.style.color='var(--red-txt)';
-      stSub.textContent=temp<TEMP_MIN?'Too cold — below 20 °C':'Too warm — above 35 °C';
+      stSub.textContent=temp<TEMP_MIN?'Too cold — below 2 °C':'Too warm — above 8 °C';
     } else {
       badge.className='badge safe'; badge.textContent='Safe';
       dot.className='status-dot';
